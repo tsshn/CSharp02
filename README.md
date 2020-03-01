@@ -1,2 +1,1 @@
-# CSharp02
- 
+# C#. Practice #2
