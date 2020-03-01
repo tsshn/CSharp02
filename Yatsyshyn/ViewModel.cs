@@ -1,8 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using Yatsyshyn.Loader;
 
 namespace Yatsyshyn
 {
@@ -54,9 +56,10 @@ namespace Yatsyshyn
 
         private async void Processor()
         {
-            var valid = true;
-            await Task.Run(() => valid = _person.Calculator());
-            if (valid)
+            LoaderManager.Instance.ShowLoader();
+            await Task.Run(() => Thread.Sleep(300));
+            
+            if (await Task.Run(() => _person.Calculator()))
             {
                 OnPropertyChanged(nameof(FirstName));
                 OnPropertyChanged(nameof(LastName));
@@ -67,9 +70,13 @@ namespace Yatsyshyn
                 OnPropertyChanged(nameof(Adult));
                 OnPropertyChanged(nameof(ChineseSign));
                 OnPropertyChanged(nameof(WesternSign));
+                LoaderManager.Instance.HideLoader();
             }
             else
+            {
+                LoaderManager.Instance.HideLoader();
                 MessageBox.Show("Please enter the correct date of birth");
+            }
 
             if (_person.CheckBirthday())
                 MessageBox.Show("Happy Birthday");

@@ -7,5 +7,8 @@
         xmlns:yatsyshyn="clr-namespace:Yatsyshyn"
         mc:Ignorable="d"
         Title="C# Practice 01" Height="600" Width="400">
-    <yatsyshyn:View />
+    <Grid IsEnabled="{Binding IsControlEnabled, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+        <yatsyshyn:View />
+        <fa:ImageAwesome Icon="Refresh" Width="50" Height="50" Spin="True" Visibility="{Binding LoaderVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+    </Grid>
 </Window>

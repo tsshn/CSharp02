@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Yatsyshyn.Loader;
 
 namespace Yatsyshyn
 {
@@ -7,6 +8,7 @@ namespace Yatsyshyn
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new OverlayViewModel();
         }
     }
 }

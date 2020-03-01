@@ -34,6 +34,10 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466">
+          <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
@@ -50,7 +54,11 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Compile Include="Loader\ILoaderOwner.cs" />
+        <Compile Include="Loader\LoaderManeger.cs" />
+        <Compile Include="Loader\OverlayViewModel.cs" />
         <Compile Include="Model.cs" />
+        <Compile Include="Properties\Annotations.cs" />
         <Compile Include="RelayCommand.cs" />
         <Compile Include="View.xaml.cs">
           <DependentUpon>View.xaml</DependentUpon>
@@ -86,6 +94,7 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="App.config" />
+        <None Include="packages.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
