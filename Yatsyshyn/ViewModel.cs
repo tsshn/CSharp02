@@ -30,25 +30,15 @@ namespace Yatsyshyn
 
         public DateTime Birthday
         {
-            set
-            {
-                _person.Birthday = value;
-                OnPropertyChanged();
-            }
-            get
-            {
-                if (_person.Birthday != null) return (DateTime) _person.Birthday;
-                return DateTime.Now;
-            }
+            set => _person.Birthday = value;
+            get => (DateTime) _person.Birthday;
         }
 
-        public int Age
-        {
-            get => _person.Age;
-            set => _person.Age = value;
-        }
+        public string Age => _person.AgeStringify();
 
-        public bool Adult => _person.Adult;
+        public string Adult => _person.IsAdultStringify();
+
+        public string IsBirthday => _person.BirthdayStringify();
 
         public string ChineseSign
         {
@@ -73,6 +63,7 @@ namespace Yatsyshyn
                 OnPropertyChanged(nameof(Age));
                 OnPropertyChanged(nameof(Email));
                 OnPropertyChanged(nameof(Birthday));
+                OnPropertyChanged(nameof(IsBirthday));
                 OnPropertyChanged(nameof(Adult));
                 OnPropertyChanged(nameof(ChineseSign));
                 OnPropertyChanged(nameof(WesternSign));

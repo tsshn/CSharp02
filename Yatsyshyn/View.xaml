@@ -49,46 +49,34 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
-
             <RowDefinition Height="20" />
             <RowDefinition Height="10" />
-
             <RowDefinition Height="20" />
             <RowDefinition Height="10" />
-
             <RowDefinition Height="20" />
             <RowDefinition Height="10" />
-
             <RowDefinition Height="30" />
             <RowDefinition Height="10" />
-
             <RowDefinition Height="30" />
             <RowDefinition Height="50" />
-
             <RowDefinition Height="20" />
             <RowDefinition Height="10" />
-
             <RowDefinition Height="20" />
             <RowDefinition Height="10" />
-            
             <RowDefinition Height="20" />
             <RowDefinition Height="10" />
-            
             <RowDefinition Height="20" />
             <RowDefinition Height="10" />
-            
             <RowDefinition Height="20" />
             <RowDefinition Height="10" />
-            
             <RowDefinition Height="20" />
             <RowDefinition Height="10" />
-            
             <RowDefinition Height="20" />
             <RowDefinition Height="10" />
-            
             <RowDefinition Height="20" />
             <RowDefinition Height="10" />
-
+            <RowDefinition Height="20" />
+            <RowDefinition Height="10" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
@@ -108,7 +96,7 @@
                  Style="{StaticResource TextBox}" />
 
         <TextBlock Grid.Row="7" Grid.Column="1" Text="Date of birth: " Style="{StaticResource Text}" />
-        <DatePicker Grid.Row="7" Grid.Column="2" SelectedDateFormat="Short"
+        <DatePicker Grid.Row="7" Grid.Column="2" SelectedDateFormat="Short" Validation.ErrorTemplate="{x:Null}"
                     SelectedDate="{Binding Birthday, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged, StringFormat=dd-MM-yyyy}"
                     Style="{StaticResource DatePicker}" />
 
@@ -119,22 +107,22 @@
         <TextBlock Grid.Row="11" Grid.Column="2"
                    Text="{Binding FirstName, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                    Style="{StaticResource Text}" />
-        
+
         <TextBlock Grid.Row="13" Grid.Column="1" Text="Last Name: " Style="{StaticResource Text}" />
         <TextBlock Grid.Row="13" Grid.Column="2"
                    Text="{Binding LastName, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                    Style="{StaticResource Text}" />
-        
+
         <TextBlock Grid.Row="15" Grid.Column="1" Text="Email: " Style="{StaticResource Text}" />
         <TextBlock Grid.Row="15" Grid.Column="2"
                    Text="{Binding Email, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                    Style="{StaticResource Text}" />
-        
+
         <TextBlock Grid.Row="17" Grid.Column="1" Text="Age: " Style="{StaticResource Text}" />
         <TextBlock Grid.Row="17" Grid.Column="2"
                    Text="{Binding Age, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                    Style="{StaticResource Text}" />
-        
+
         <TextBlock Grid.Row="19" Grid.Column="1" Text="Date of birth: " Style="{StaticResource Text}" />
         <TextBlock Grid.Row="19" Grid.Column="2"
                    Text="{Binding Birthday, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, StringFormat=dd-MM-yyyy}"
@@ -144,15 +132,20 @@
         <TextBlock Grid.Row="21" Grid.Column="2"
                    Text="{Binding ChineseSign, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                    Style="{StaticResource Text}" />
-        
+
         <TextBlock Grid.Row="23" Grid.Column="1" Text="Western sign: " Style="{StaticResource Text}" />
         <TextBlock Grid.Row="23" Grid.Column="2"
                    Text="{Binding WesternSign, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                    Style="{StaticResource Text}" />
-        
+
         <TextBlock Grid.Row="25" Grid.Column="1" Text="Adult: " Style="{StaticResource Text}" />
         <TextBlock Grid.Row="25" Grid.Column="2"
                    Text="{Binding Adult, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                   Style="{StaticResource Text}" />
+        
+        <TextBlock Grid.Row="27" Grid.Column="1" Text="Birthday is today: " Style="{StaticResource Text}" />
+        <TextBlock Grid.Row="27" Grid.Column="2"
+                   Text="{Binding IsBirthday, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                    Style="{StaticResource Text}" />
 
     </Grid>

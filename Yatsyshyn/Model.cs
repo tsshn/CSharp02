@@ -114,6 +114,22 @@ namespace Yatsyshyn
             }
         }
 
+        //Stringifier
+        public string IsAdultStringify()
+        {
+            return Birthday.HasValue ? Adult.ToString() : "";
+        }
+        
+        public string AgeStringify()
+        {
+            return Birthday.HasValue ? Age.ToString() : "";
+        }
+
+        public string BirthdayStringify()
+        {
+            return Birthday.HasValue ? CheckBirthday().ToString() : "";
+        }
+
         #endregion
 
         #region Constructors
